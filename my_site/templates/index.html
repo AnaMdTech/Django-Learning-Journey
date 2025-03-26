@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome to My Project{% endblock  %}
+
+{% block content %}
+  <h1>Welcome to My Project!</h1>
+  <p>This is the main welcome page for the entire project.</p>
+  <p>Check out our apps:</p>
+  <ul>
+      <li><a href="{% url "index_blog" %}">Blog</a></li>
+      <li><a href="/otherapp/">Other App</a></li>
+  </ul>
+{% endblock %}
