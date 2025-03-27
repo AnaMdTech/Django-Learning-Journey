@@ -3,19 +3,13 @@
 {% load static %}
 
 {% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post.css" %}" />
   <link rel="stylesheet" href="{% static "blog/index.css" %}">
 {% endblock  %}
 
 {% block title %}My Blog{% endblock  %}
 
 {% block content %}
-  <header id='main-navigation'>
-    <h1><a href="">Ana's Blog</a></h1>
-    <nav>
-      <a href="">All posts</a>
-    </nav>
-  </header>
-
   <section id='welcome'>
     <header>
       <img src="{% static "blog/images/ana.jpg" %}" alt="Ana - The Author Of This Blog" />
@@ -28,19 +22,7 @@
     <h2>My Latest Thought</h2>
 
     <ul>
-      <li>
-        <article class='post'>
-          <a href="">
-            <img src="{% static "blog/images/mountains.jpg" %}" alt='High Mountains' />
-            <div class='post__content'>
-              <h3>High Mountains</h3>
-              <p>
-                This is a sample post. You can replace this with your own content.
-              </p>
-            </div>
-          </a>
-        </article>
-      </li>
+      {% include "blog/includes/post.html" %}
     </ul>
   </section>
 

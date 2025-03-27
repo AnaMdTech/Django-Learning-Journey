@@ -70,29 +70,3 @@
   font-size: 1.5rem;
   color: #353535;
 }
-
-.post {
-  padding: 10px;
-  cursor: pointer;
-  transition: background 1s ease-out;
-}
-
-.post:hover {
-  background: linear-gradient(to right top, #6305dd, #390281);
-}
-
-.post a {
-  text-decoration: none;
-  color: #202020;
-}
-
-.post:hover a {
-  color: white;
-}
-
-.post img {
-  width: 7rem;
-  height: 7rem;
-  border-radius: 50%;
-}
-
