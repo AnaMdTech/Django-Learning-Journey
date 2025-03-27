@@ -65,7 +65,46 @@ all_posts = [
           aperiam est praesentium, quos iste consequuntur omnis exercitationem quam
           velit labore vero culpa ad mollitia? Quis architecto ipsam nemo. Odio.
         """
-    }
+    },
+    {
+        "slug": "tech-trends-2025",
+        "image": "tech.jpg",
+        "author": "Ana Mohammed",
+        "date": date(2025, 2, 15),
+        "title": "The Future of Tech: Trends to Watch",
+        "excerpt": "Technology is evolving at an unprecedented pace. Let's explore some key trends shaping the future!",
+        "content": """  
+          From AI-driven automation to quantum computing, the world of technology is advancing rapidly.  
+          We explore the most exciting innovations and what they mean for businesses and consumers.  
+          Stay ahead of the curve and discover what the future holds!
+        """
+    },
+    {
+        "slug": "deep-work-productivity",
+        "image": "deep-work.jpg",
+        "author": "Ana Mohammed",
+        "date": date(2024, 11, 8),
+        "title": "Mastering Deep Work for Maximum Productivity",
+        "excerpt": "Struggling with distractions? Learn how to get into deep work mode and boost your productivity.",
+        "content": """  
+          In a world filled with distractions, mastering deep work is the key to achieving high-impact results.  
+          This article covers proven strategies to help you enter deep focus mode, avoid distractions,  
+          and produce high-quality work efficiently.
+        """
+    },
+    {
+        "slug": "ai-in-web-development",
+        "image": "ai-web.jpg",
+        "author": "Ana Mohammed",
+        "date": date(2024, 6, 25),
+        "title": "How AI is Changing Web Development",
+        "excerpt": "AI tools are revolutionizing web development. Should you embrace them or stick to traditional methods?",
+        "content": """  
+          With AI-driven code generators, design assistants, and automation tools,  
+          web development is undergoing a transformation. We discuss the advantages, limitations,  
+          and best practices for leveraging AI in modern development workflows.
+        """
+    },
 ]
 
 def get_date(post):
