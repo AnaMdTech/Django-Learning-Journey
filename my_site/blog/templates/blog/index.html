@@ -1,7 +1,56 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/index.css" %}">
+{% endblock  %}
+
 {% block title %}My Blog{% endblock  %}
 
 {% block content %}
-  <h1>Welcome to My Blog</h1>
+  <header id='main-navigation'>
+    <h1><a href="">Ana's Blog</a></h1>
+    <nav>
+      <a href="">All posts</a>
+    </nav>
+  </header>
+
+  <section id='welcome'>
+    <header>
+      <img src="" alt="Ana - The Author Of This Blog" />
+      <h2>Ana's Blog</h2>
+    </header>
+    <p>Hi I am Ana and I love to blog about tech and the world</p>
+  </section>
+
+  <section id='latest-posts'>
+    <h2>My Latest Thought</h2>
+
+    <ul>
+      <li>
+        <article class='post'>
+          <a href="">
+            <img src="" alt='Title of the Post'>
+            <div class='post__content'>
+              <h3>Title of the Post</h3>
+              <p>
+                This is a sample post. You can replace this with your own content.
+              </p>
+            </div>
+          </a>
+        </article>
+      </li>
+    </ul>
+  </section>
+
+  <section id='about'>
+    <h2>What i do</h2>
+    <p>
+      I am a software engineer and a passionate about technology. I love to write about how technology has impacted our lives and how we can use it to make a better world.
+    </p>
+    <p>
+      Feel free to reach out if you have any questions or want to share your thoughts.
+    </p>
+  </section>
 {% endblock  %}
