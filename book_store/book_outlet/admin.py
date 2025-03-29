@@ -3,6 +3,10 @@ from django.contrib import admin
 from.models import Book
 
 # Register your models here.
+admin.site.site_header = "Book Store Admin Panel"
+admin.site.site_title = "Book Store Admin"
+admin.site.index_title = "Welcome to the Book Store Management System"
+
 
 class BookAdmin(admin.ModelAdmin):
   # readonly_fields = ("slug",)
