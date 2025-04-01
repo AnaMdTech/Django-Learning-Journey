@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from.models import Book
+from.models import Book, Author
 
 # Register your models here.
 admin.site.site_header = "Book Store Admin Panel"
@@ -16,3 +16,4 @@ class BookAdmin(admin.ModelAdmin):
   search_fields = ["title", "author", "rating"]
 
 admin.site.register(Book, BookAdmin)
+admin.site.register(Author)
