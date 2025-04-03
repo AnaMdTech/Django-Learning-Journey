@@ -8,17 +8,19 @@
 {% endblock %}
 
 {% block content %}
-    <h1 class="title">Job Categories</h1>
-    <div class="job-container">
-      {% for category, job_list in jobs.items %}
-        <h3 class="job-category">{{ category }}</h3>
-        <ul class="job-list">
-          {% for job in job_list %}
-            <li>{{ job }}</li>
-          {% endfor %}
-        </ul>
-      {% endfor %}
-    </div>
+  <h1 class="title">Job Categories</h1>
+  <div class="job-container">
+    {% for category_data in job_dicts %}
+      <h3 class="job-category">{{ category_data.category }}</h3>
+      <ul class="job-list">
+        {% for job in category_data.jobs %}
+          <li>
+            <a href="{% url "job-detail" slug=job.slug %}">{{ job.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    {% endfor %}
+  </div>
 
-    <script src="{% static 'jobs/JS/job_list.js' %}"></script>
+  <script src="{% static 'jobs/JS/job_list.js' %}"></script>
 {% endblock %}

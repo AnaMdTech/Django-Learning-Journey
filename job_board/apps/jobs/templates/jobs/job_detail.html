@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}All Jobs{% endblock %}
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static 'jobs/CSS/job_detail.css' %}">
+{% endblock %}
+
+{% block content %}
+    <h2>{{ job.title }}</h2>
+    <div class="wrapper">
+      <p>Salary: {{ job.salary }}</p>
+      <p>
+        {{ job.description }}
+      </p>
+    </div>
+
+    {% comment %} <script src="{% static 'jobs/JS/job_list.js' %}"></script> {% endcomment %}
+{% endblock %}

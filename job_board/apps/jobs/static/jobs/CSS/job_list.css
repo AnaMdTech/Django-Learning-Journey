@@ -1,25 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: 'Open Sans', 'Lato', sans-serif;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-}
-
-h1,
-h2,
-h3 {
-  font-family: 'Lato', sans-serif;
-  font-weight: bold;
-}
-
 .title {
   text-transform: uppercase;
   background-color: blanchedalmond;
@@ -66,8 +44,26 @@ h3 {
 .job-list li {
   padding: 5px 10px;
   border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.job-list li:hover {
+  background-color: #007BFF;
+  transition: all 0.3s ease;
+}
+
+.job-list li:hover a {
+  color: #fff;
+  scale: 1.4;
+  font-size: 1.2rem;
 }
 
 .job-list li:last-child {
   border-bottom: none;
 }
+
+.job-list li a {
+  text-decoration: none;
+  color: #333;
+}
+
