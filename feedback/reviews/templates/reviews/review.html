@@ -3,14 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>your Review</title>
+  <title>Your Review</title>
 </head>
 <body>
   <form action="/" method="POST">
     {% csrf_token %}
-    <label for="username">Your Name</label>
-    <input type="text" name="username" id="username">
-    <button>Send</button>
+    {% if has_error %}
+      <p>This form is invalid - please enter a valid username!</p>
+    {% endif %}
+    <label for="username">Your name</label>
+    <input id="username" name="username" type="text">
+    <button type="submit">Send</button>
   </form>
 </body>
 </html>
