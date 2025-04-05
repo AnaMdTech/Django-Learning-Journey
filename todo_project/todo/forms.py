@@ -7,8 +7,8 @@ class TaskForm(forms.ModelForm):
         fields = ['title']
         widgets = {
             'title': forms.TextInput(attrs={
-                'placeholder': 'Write a task...',
-                'class': 'todo-input',
+                'placeholder': 'Write anything and hit enter to add',
+                'id': 'todo-input',
                 'autocomplete': 'off'
             })
         }
