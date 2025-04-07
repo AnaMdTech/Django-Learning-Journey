@@ -15,7 +15,7 @@ def product_create_view(request):
     if form.is_valid():
         form.save()
         return redirect('product_list')
-    return render(request, 'invApp/create.html', {'form': form})
+    return render(request, 'invApp/product_form.html', {'form': form})
 
 
 # Read View
@@ -29,7 +29,7 @@ def product_update_view(request, product_id):
     if form.is_valid():
         form.save()
         return redirect('product_list')
-    return render(request, 'invApp/update.html', {'form': form})
+    return render(request, 'invApp/product_form.html', {'form': form})
 # Delete View
 def product_delete_view(request, product_id):
     product = Product.objects.get(product_id=product_id)
