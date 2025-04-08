@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> {% block title %} Job Board App {% endblock title %} </title>
+  <link rel="stylesheet" href="{% static "jobs/styles.css" %}">
+  {% block css_files %}{% endblock css_files %}
+</head>
+<body>
+  <header class="header">
+    <h1 class="header-logo">
+      <a href="{% url "home" %}">Job Board App</a>
+    </h1>
+    <nav class="nav">
+      <ul class="nav-menu">
+        <li><a href="{% url 'add-job' %}">Post a Job</a></li>
+        <li><a href="{% url 'job-list' %}">Browse Jobs</a></li>
+      </ul>
+    </nav>
+  </header>
+  {% block content %}
+  
+  {% endblock content %}
+</body>
+</html>

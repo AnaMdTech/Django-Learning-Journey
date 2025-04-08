@@ -1,26 +1,29 @@
-{% extends "base.html" %}
-{% load static %}
+{% extends "jobs/layout.html" %}
 
-{% block title %}All Jobs{% endblock %}
-
-{% block css_files %}
-  <link rel="stylesheet" href="{% static 'jobs/CSS/job_list.css' %}">
-{% endblock %}
+{% block title %}Job List | Job Board{% endblock title %}
 
 {% block content %}
-  <h1 class="title">Job Categories</h1>
+<div class="container">
+  <h1>Job List</h1>
+
   <div class="job-container">
-    {% for category_data in job_dicts %}
-      <h3 class="job-category">{{ category_data.category }}</h3>
-      <ul class="job-list">
-        {% for job in category_data.jobs %}
-          <li>
-            <a href="{% url "job-detail" slug=job.slug %}">{{ job.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+    {% for job in jobs %}
+      <div class="job-card">
+        <h2>{{ job.category }}</h2>
+        <p><strong>Job Title:</strong> {{ job.title }}</p>
+        <p><strong>Job Type:</strong> On-site - Permanent (Full-time)</p>
+        <p><strong>Work Location:</strong> Addis Ababa, Ethiopia</p>
+        <p><strong>Salary/Compensation:</strong> {{ job.salary }} ETB Monthly</p>
+        <p><strong>Deadline:</strong> March 21st, 2025</p>
+        <p>
+          <strong>Description:</strong><br>
+          {{ job.description }}
+        </p>
+        <a href="">
+          <button>Apply Now</button>
+        </a>
+      </div>
     {% endfor %}
   </div>
-
-  <script src="{% static 'jobs/JS/job_list.js' %}"></script>
-{% endblock %}
+</div>
+{% endblock content %}

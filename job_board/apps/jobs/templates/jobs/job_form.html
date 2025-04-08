@@ -1,0 +1,16 @@
+{% extends "jobs/layout.html" %}
+
+{% block title %}Welcome | Job Board{% endblock title %}
+
+{% block content %}
+<div class="container">
+  <h1>Job Form</h1>
+  <form method="POST">
+    {% csrf_token %}
+    <div class="form-control">
+      {{ form }}
+    </div>
+    <button type="submit">Add Job</button>
+  </form>
+</div>
+{% endblock content %}

@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 70px;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.header-logo a {
+  text-decoration: none;
+  color: burlywood;
+  transition: color 0.3s ease;
+}
+
+.header-logo:hover a {
+  color: bisque;
+}
+
+.nav .nav-menu {
+  display: flex;
+}
+
+.nav .nav-menu li {
+  list-style: none;
+  padding: 0 1rem;
+}
+
+.nav .nav-menu li a {
+  text-decoration: none;
+  font-size: 1.1rem;
+  color: bisque;
+  transition: color 0.3s ease;
+}
+
+.nav .nav-menu li:hover a {
+  color: burlywood;
+  text-decoration: underline;
+}
+
+/* Home Style */
+.home-hero {
+  display: flex;
+  height: 90vh;
+  margin-top: 70px;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(to right, #2c3e50, #4ca1af);
+  color: white;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.75rem 1.5rem;
+  background-color: #f39c12;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #d35400;
+}
+
+.btn-secondary {
+  background-color: #3498db;
+}
+
+.btn-secondary:hover {
+  background-color: #2980b9;
+}
+
+/* Form Style */
+.container {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding-top: 1rem;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+form {
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 30rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+button {
+  cursor: pointer;
+  padding: 0.5rem 1.5rem;
+  border-radius: 6px;
+  background-color: #1f0050;
+  color: white;
+  border: 1px solid #1f0050;
+}
+
+button:hover,
+button:active {
+  background-color: #320777;
+  border-color: #320777;
+}
+
+.form-control {
+  margin-bottom: 1rem;
+}
+
+.form-control input {
+  font: inherit;
+  padding: 0.25rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  display: block;
+  width: 10rem;
+}
+
+.form-control input:focus {
+  border-color: #1f0050;
+  outline: none;
+  background-color: #f4eeff;
+}
+
+.form-control label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.errorlist {
+  list-style: none;
+  margin: 0.5rem 0;
+  padding: 0;
+  color: #680000;
+}
+
+.errors input {
+  border-color: #680000;
+  background-color: #fde3e3;
+}
+
+.errors label {
+  color: #680000;
+}
+
+/* Job List Style */
+.job-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 75rem;
+}
+
+.job-card {
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.26);
+  width: 100%;
+  max-width: 20rem;
+  border: 1px solid #ccc;
+}
+
+.job-card:hover {
+  border: 1px solid #ddd;
+}
+
+.job-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.job-card p {
+  margin-bottom: 1rem;
+}
+
+.job-card a {
+  text-decoration: none;
+  color: #1f0050;
+  transition: color 0.3s ease;
+}
+
+.job-card a:hover {
+  color: #320777;
+}
