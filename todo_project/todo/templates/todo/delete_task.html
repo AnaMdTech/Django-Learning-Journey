@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Confirm Delete</title>
+  <link rel="stylesheet" href="{% static 'todo/styles.css' %}" />
+  <style>
+    body {
+      background-color: rgba(0, 0, 0, 0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
+
+    .modal {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+      width: 300px;
+    }
+
+    .modal h2 {
+      margin-bottom: 1rem;
+    }
+
+    .modal-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 1.5rem;
+    }
+
+    .modal-buttons a,
+    .modal-buttons button {
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .cancel-btn {
+      background-color: #6c757d;
+    }
+
+    .delete-btn {
+      background-color: #dc3545;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="modal">
+    <h2>Delete Task</h2>
+    <p>Are you sure you want to delete <strong>{{ task.title }}</strong>?</p>
+
+    <form method="POST">
+      {% csrf_token %}
+      <div class="modal-buttons">
+        <a href="{% url 'task-list' %}" class="cancel-btn">Cancel</a>
+        <button type="submit" class="delete-btn">Delete</button>
+      </div>
+    </form>
+  </div>
+</body>
+
+</html>
