@@ -40,6 +40,12 @@ class ProductListView(ListView):
     template_name = 'invApp/product_list.html'
     context_object_name = 'products'
 
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query:
+            return Product.objects.filter(name__icontains=query)
+        return Product.objects.all()
+
 # Update View
 # def product_update_view(request, product_id):
 #     product = Product.objects.get(product_id=product_id)

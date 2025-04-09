@@ -3,6 +3,18 @@
 {% block title %} Product List {% endblock  %}
 
 {% block content %}
+  <form method="get" class="d-flex mb-3 w-25" role="search">
+    <input 
+      type="text" 
+      name="q" 
+      class="form-control me-2" 
+      placeholder="Search products..." 
+      aria-label="Search"
+    >
+    <button class="btn btn-primary" type="submit">Search</button>
+  </form>
+
+
   <h1 class="text-center">Products</h1>
   <table class="table table-bordered table-striped">
     <thead class="thead-dark">
