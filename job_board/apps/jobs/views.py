@@ -45,3 +45,10 @@ class JobListView(ListView):
     model = Job # define the model
     template_name = "jobs/job_list.html" # dont need to explicitly define the template name cause the default is job_form --> <app>/<model>_<viewtype>.html
     context_object_name = "jobs" # define the variable to use in the template the default is object_list
+    paginate_by = 9  # Show 9 jobs per page
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        if query: # if there is a query
+            return Job.objects.filter(title__icontains=query) # filter the jobs by the query
+        return Job.objects.all()
