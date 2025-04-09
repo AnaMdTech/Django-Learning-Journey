@@ -1,14 +1,18 @@
 from django.shortcuts import render, redirect
 from .forms import ProductForm
 from .models import Product
+from django.views.generic.base import TemplateView
 from django.views.generic import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
 # Create your views here.
 
 # Home View
-def home_view(request):
-  return render(request, 'invApp/home.html')
+# def home_view(request):
+#   return render(request, 'invApp/home.html')
+
+class HomeView(TemplateView):
+    template_name = 'invApp/home.html'
 
 # CRUD = Create, Read, Update, Delete
 # Create View
