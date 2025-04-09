@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ProductForm
 from .models import Product
-from django.views.generic import UpdateView
+from django.views.generic import UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -41,12 +41,15 @@ class ProductUpdateView(UpdateView):
     success_url = reverse_lazy('product_list')
 
 # Delete View
-def product_delete_view(request, product_id):
-    product = Product.objects.get(product_id=product_id)
-    if request.method == 'POST':
-        product.delete()
-        return redirect('product_list')
-    return render(request, 'invApp/product_confirm_delete.html', {'product': product})
+# def product_delete_view(request, product_id):
+#     product = Product.objects.get(product_id=product_id)
+#     if request.method == 'POST':
+#         product.delete()
+#         return redirect('product_list')
+#     return render(request, 'invApp/product_confirm_delete.html', {'product': product})
     
 
 
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy('product_list')
