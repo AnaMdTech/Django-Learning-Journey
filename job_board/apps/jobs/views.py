@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Job
 from .forms import JobForm
 from django.urls import reverse_lazy
+from django.utils.text import slugify
+from django.contrib import messages
 # from django.views import View
 # from django.views.generic.base import TemplateView
 from django.views.generic import ListView, CreateView
@@ -21,6 +23,17 @@ class JobCreateView(CreateView):
     form_class = JobForm
     success_url = reverse_lazy('job-list')
     # template_name = 'jobs/job_form.html' # dont need to explicitly define the template name cause the default is job_form --> <app>/<model>_<viewtype>.html
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        form.instance.slug = slugify(form.instance.title)
+
+        # Check for duplicate book title by same user
+        if Job.objects.filter(title=form.instance.title).exists():
+            messages.error(self.request, "You've already added a book with this title.")
+            return redirect("add-job")  # or back to form
+
+        return super().form_valid(form)
 
 
 

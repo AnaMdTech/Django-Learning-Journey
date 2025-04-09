@@ -225,3 +225,8 @@ button:active {
 .job-card a:hover {
   color: #320777;
 }
+
+.error-message {
+  color: red;
+  text-align: center;
+}
