@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from .forms import ProductForm
 from .models import Product
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
 # Create your views here.
@@ -12,13 +12,18 @@ def home_view(request):
 
 # CRUD = Create, Read, Update, Delete
 # Create View
-def product_create_view(request):
-    form = ProductForm(request.POST or None)
-    if form.is_valid():
-        form.save()
-        return redirect('product_list')
-    return render(request, 'invApp/product_form.html', {'form': form})
+# def product_create_view(request):
+#     form = ProductForm(request.POST or None)
+#     if form.is_valid():
+#         form.save()
+#         return redirect('product_list')
+#     return render(request, 'invApp/product_form.html', {'form': form})
 
+
+class ProductCreateView(CreateView):
+    model = Product
+    form_class = ProductForm
+    success_url = reverse_lazy('product_list')
 
 # Read View
 def product_list_view(request):
