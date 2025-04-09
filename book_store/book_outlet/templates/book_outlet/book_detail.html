@@ -5,11 +5,11 @@
 {% endblock %}
 
 {% block content %}
-  <h1>{{ title }}</h1>
-  <h2>{{ author }}</h2>
-  <p>The book has a rating of {{ rating }}
+  <h1>{{ book.title }}</h1>
+  <h2>{{ book.author }}</h2>
+  <p>The book has a rating of {{ book.rating }}
 
-    {% if is_bestseller %}
+    {% if book.is_bestseller %}
       and is bestseller.
     {% else %} 
       but isn't a bestseller.

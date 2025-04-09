@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import Http404
 from django.db.models import Count, Avg
 from .models import Book
+from django.views.generic import DetailView
 
 # Create your views here.
 def index(request):
@@ -15,16 +16,23 @@ def index(request):
     'average_rating': average_rating
   })
 
-def book_detail(request, slug):
-  # try:
-  #   book = Book.objects.get(pk=id)
-  # except:
-  #   raise Http404()
+# def book_detail(request, slug):
+#   # try:
+#   #   book = Book.objects.get(pk=id)
+#   # except:
+#   #   raise Http404()
   
-  book = get_object_or_404(Book, slug=slug)
-  return render(request, 'book_outlet/book_detail.html', {
-    'title': book.title,
-    'author': book.author,
-    'rating': book.rating,
-    'is_bestseller': book.is_bestselling,
-  })
+#   book = get_object_or_404(Book, slug=slug)
+#   return render(request, 'book_outlet/book_detail.html', {
+#     'title': book.title,
+#     'author': book.author,
+#     'rating': book.rating,
+#     'is_bestseller': book.is_bestselling,
+#   })
+
+class BookDetailView(DetailView):
+  model = Book
+  template_name = "book_outlet/book_detail.html"
+  context_object_name = "book"
+  slug_field = "slug" # if you want to use slug instead of pk
+  slug_url_kwarg = 'slug'
