@@ -3,7 +3,7 @@ from django.views import View
 from django.http import HttpResponseRedirect
 from .forms import ProfileForm
 from .models import UserProfile
-from django.views.generic import CreateView
+from django.views.generic import CreateView, ListView
 
 # Create your views here.
 
@@ -30,3 +30,8 @@ class CreateProfileView(CreateView):
 #           profile.save()
 #           return HttpResponseRedirect("/profiles")
 #         return render(request, "profiles/create_profile.html", {"form": submitted_form})
+
+class ProfilesView(ListView):
+    model = UserProfile
+    template_name = "profiles/user_profiles.html"
+    context_object_name = 'profiles'
