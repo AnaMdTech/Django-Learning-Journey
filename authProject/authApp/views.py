@@ -21,7 +21,17 @@ def register_view(request):
       return render(request, 'accounts/register.html', {'form': form})
 
 def login_view(request):
-  pass
+  if request.method == 'POST':
+    username = request.POST.get('username')
+    password = request.POST.get('password')
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+      login(request, user)
+      next_url = request.GET.get('next') or request.POST.get('next') or 'home'
+      return redirect(next_url)
+    else:
+      error_message = 'Invalid credentials'
+  return render(request, 'accounts/login.html', {'error': error_message})
 
 def logout_view(request):
   pass
