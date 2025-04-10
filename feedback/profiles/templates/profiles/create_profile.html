@@ -12,7 +12,7 @@
   <form action="/profiles/" method="POST" enctype="multipart/form-data">
     {% csrf_token %}
     {% comment %} <input type="file" name="image" /> {% endcomment %}
-    {{ form.user_image }}
+    {{ form.image }}
     <button>Upload!</button>
   </form>
 </body>
