@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Django Templates{% endblock %}</title>
+</head>
+<body>
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/about/">About</a>
+  </nav>
+  <hr>
+
+  <div>
+    {% block content %}
+    {% endblock %}
+  </div>
+</body>
+</html>
