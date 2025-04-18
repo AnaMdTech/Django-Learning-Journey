@@ -6,3 +6,6 @@ def home(request):
 
 def about(request):
     return HttpResponse("<h1>About Page: This is a simple static view.</h1>")
+
+def greet_user(request, name):
+    return HttpResponse(f"<h1>Hello, {name.capitalize()}! 👋🏾</h1>")
