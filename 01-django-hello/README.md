@@ -61,3 +61,7 @@ This is the first mini project of the Django Learning Journey. It focuses on set
 - Add another URL route (like `/about`) with a different message
 - Try returning some basic HTML inside the response
 - Play around with the port (`python manage.py runserver 8080`)
+
+## 🤝 Contribute
+
+Feel free to fork, clone, or PR this project to improve it or use it as a base for your own learning!
