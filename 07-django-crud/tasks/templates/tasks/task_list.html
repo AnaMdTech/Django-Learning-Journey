@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Tasks</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    a.button {
+      display: inline-block;
+      margin-bottom: 20px;
+      background-color: teal;
+      color: white;
+      padding: 8px 12px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    ul { list-style: none; padding: 0; }
+    li { margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+
+  <h1>Tasks</h1>
+  <a href="{% url 'task_create' %}" class="button">+ Add Task</a>
+
+  <ul>
+    {% for task in tasks %}
+      <li>
+        <strong>{{ task.title }}</strong> - 
+        {% if task.completed %} ✅ Completed {% else %} ❌ Not Completed {% endif %}
+        <br>
+        <a href="{% url 'task_update' task.pk %}">Edit</a> |
+        <a href="{% url 'task_delete' task.pk %}">Delete</a>
+      </li>
+    {% empty %}
+      <li>No tasks yet. Add one!</li>
+    {% endfor %}
+  </ul>
+
+</body>
+</html>
